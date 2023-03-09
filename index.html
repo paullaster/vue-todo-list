@@ -9,7 +9,7 @@
 <body>
     <div id="app">
         <h1>{{heading}}</h1>
-        <form @onsubmit="onSubmit.prevent">
+        <form @submit="onSubmit">
             <div>
                 <label for="newTodo">
                     Add a new Todo
@@ -40,8 +40,9 @@
                 ]
             },
             methods: {
-                onSubmit: function(){
-                    console.log(newTodo);
+                onSubmit: function(e){
+                    e.preventDefault();
+                    console.log(newTodo.value);
                 }
             }
         })
