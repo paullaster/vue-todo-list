@@ -42,12 +42,17 @@
             methods: {
                 onSubmit: function(e){
                     e.preventDefault();
-                    console.log(newTodo.value);
+                    let id = this.todos.length + 1;
+                    this.todos.unshift({id, name: newTodo.value});
                 }
             }
         })
         Vue.component('todo-list',{
-            template: '<li>{{name}}</li>',
+            template: '\
+            <li>\
+                {{name}}\
+            </li>\
+            ',
             props: [name]
         })
     </script>
