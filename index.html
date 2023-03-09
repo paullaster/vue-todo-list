@@ -9,7 +9,7 @@
 <body>
     <div id="app">
         <h1>{{heading}}</h1>
-        <form @onsubmit="onSubmit">
+        <form @onsubmit="onSubmit.prevent">
             <div>
                 <label for="newTodo">
                     Add a new Todo
@@ -39,7 +39,11 @@
 
                 ]
             },
-            
+            methods: {
+                onSubmit: function(){
+                    
+                }
+            }
         })
         Vue.component('todo-list',{
             template: '<li>{{name}}</li>',
