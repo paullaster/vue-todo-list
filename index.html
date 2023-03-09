@@ -45,8 +45,10 @@
                     let id = this.todos.length + 1;
                     this.todos.unshift({id, name: newTodo.value});
                 },
-                removeTodo: function(){
-
+                removeTodo: function(id){
+                    this.todos = this.todos.filter(function(todo){
+                        return todo.id !== id;
+                    })
                 }
             }
         })
