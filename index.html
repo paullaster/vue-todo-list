@@ -25,6 +25,7 @@
                 v-bind:name="todo.name"
                 v-bind:id="todo.id"
                 v-bind:key="todo.id"
+                v-bind:removeTodo="removeTodo"
             >
             </li>
         </ol>
@@ -57,10 +58,10 @@
             template: '\
             <li>\
                 {{name}}\
-                <button type="button">remove </button>\
+                <button type="button" @click=\'removeTodo(id)\'>remove </button>\
             </li>\
             ',
-            props: ['name', 'id']
+            props: ['name', 'id','removeTodo']
         })
     </script>
 </body>
