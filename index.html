@@ -25,7 +25,6 @@
                 v-bind:name="todo.name"
                 v-bind:key="todo.id"
             >
-
             </li>
         </ol>
     </div>
@@ -35,15 +34,12 @@
             el: '#app',
             data: {
                 heading: "Vue 2 Todo List",
+                newTodo: '',
                 todos: [
 
                 ]
             },
-            computed: {
-                checkIfFree : function(){
-                    this.todos.length < 1 ? "You are free": ''
-                }
-            }
+            
         })
         Vue.component('todo-list',{
             template: '<li>{{name}}</li>',
