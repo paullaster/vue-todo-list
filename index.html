@@ -29,12 +29,13 @@
             data: {
                 heading: "Vue 2 Todo List",
                 todos: [
-                
+
                 ]
             }
         })
         Vue.component('todo-list',{
             template: '<li>{{name}}</li>',
+            props: [name]
         })
     </script>
 </body>
